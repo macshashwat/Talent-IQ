@@ -30,13 +30,13 @@ app.get("/health", (req, res) => {
 });
 
 // make our app ready for deployment
-/*if (ENV.NODE_ENV === "production") {
+if (ENV.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
   app.get("/{*any}", (req, res) => {
     res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
   });
-}*/
+}
 
 const startServer = async () => {
   try {
@@ -48,5 +48,4 @@ const startServer = async () => {
 };
 
 startServer();
-export default app;
 
